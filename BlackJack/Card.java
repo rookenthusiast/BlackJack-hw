@@ -17,4 +17,9 @@ public SuitType getSuit() {
 public ValueType getNumber() {
   return this.number;
 }
+
+@Override
+public String toString(){
+return this.number + " of " + this.suit;
+}
 }

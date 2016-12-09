@@ -1,4 +1,5 @@
 package BlackJack;
+import java.util.*;
 
 public class Deck { 
 
@@ -6,6 +7,10 @@ public class Deck {
 
   public Deck(){
     this.deck = new Card[52];
+  }
+
+  public Card[] getDeck(){
+    return this.deck;
   }
 
   public int deckCount() {
@@ -21,9 +26,7 @@ public class Deck {
   public void addCards(){
     int counter = 0;
     for (SuitType suit : SuitType.values()) {
-      System.out.println("SUIT CHANGE " + suit);
       for (ValueType number : ValueType.values()) {
-        System.out.println("NUMBER CHANGE " + number);
         deck[counter] = new Card(suit, number);
         counter++;
       }
@@ -31,12 +34,13 @@ public class Deck {
 
   }
 
-  public void shuffle(){
-    
+  public void shuffle( ){
+    List<Card> shuffled = Arrays.asList(deck);
+    Collections.shuffle(shuffled);
   }
 
-  public void dealCards(){
-
+  public Card dealCards(){
+return deck.remove(0)
   }
 
 }

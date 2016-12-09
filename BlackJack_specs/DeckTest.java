@@ -18,4 +18,9 @@ public void canAddCards(){
   assertEquals(52, deck.deckCount());
 }
 
+@Test
+public void deckIsShuffled(){
+  deck.shuffle();
+System.out.println(deck);
+}
 }
