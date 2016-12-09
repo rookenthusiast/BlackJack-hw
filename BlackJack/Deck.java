@@ -3,13 +3,13 @@ import java.util.*;
 
 public class Deck { 
 
-  private Card[] deck;
+  private ArrayList<Card> deck;
 
   public Deck(){
-    this.deck = new Card[52];
+    this.deck = new ArrayList<Card>();
   }
 
-  public Card[] getDeck(){
+  public ArrayList<Card> getDeck(){
     return this.deck;
   }
 
@@ -24,23 +24,20 @@ public class Deck {
   }
 
   public void addCards(){
-    int counter = 0;
     for (SuitType suit : SuitType.values()) {
       for (ValueType number : ValueType.values()) {
-        deck[counter] = new Card(suit, number);
-        counter++;
+        deck.add(new Card(suit, number));
       }
     }
 
   }
 
   public void shuffle( ){
-    List<Card> shuffled = Arrays.asList(deck);
-    Collections.shuffle(shuffled);
+    Collections.shuffle(deck);
   }
 
-  public Card dealCards(){
-return deck.remove(0)
+  public Card takeCard(){
+return deck.remove(0);
   }
 
 }

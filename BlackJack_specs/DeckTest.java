@@ -23,4 +23,11 @@ public void deckIsShuffled(){
   deck.shuffle();
 System.out.println(deck);
 }
+
+@Test 
+public void dealTheCards(){
+  deck.addCards();
+  deck.takeCard();
+assertEquals(51, deck.deckCount());
+}
 }

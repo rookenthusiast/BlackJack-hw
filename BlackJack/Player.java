@@ -17,5 +17,9 @@ public class Player {
   public Hand getHand(){
     return this.hand;
   }
+
+  public void takeCardFromDealer(Card card){
+    hand.addDealtCard(card);
+  }
   
 }
