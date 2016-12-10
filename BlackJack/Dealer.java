@@ -1,13 +1,15 @@
 package BlackJack;
 
-public class Dealer extends Player{
+public class Dealer{
 
+  public String name;
   Deck deck;
+  Hand hand;
 
   public Dealer (String name, Deck deck, Hand hand){
-    super(name);
-    this.hand = hand;
+    this.name = name;
     this.deck = deck;
+    this.hand = hand;
 
   }
 
@@ -15,9 +17,14 @@ public class Dealer extends Player{
     return this.name;
   }
 
-  public void dealCard(Player player){
+  public void dealCard(Player player, Dealer dealer){
     Card card = deck.takeCard();
     player.takeCardFromDealer(card);
+    dealer.takeCardFromDealer(card);
+  }
+
+  public void takeCardFromDealer(Card card){
+    hand.addDealtCard(card);
   }
 
 }
