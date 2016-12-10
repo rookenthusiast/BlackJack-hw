@@ -1,13 +1,14 @@
 package BlackJack;
 
-public class Dealer{
+public class Dealer extends Player{
 
-  public String name;
   Deck deck;
 
-  public Dealer (String name, Deck deck){
-    this.name = name;
+  public Dealer (String name, Deck deck, Hand hand){
+    super(name);
+    this.hand = hand;
     this.deck = deck;
+
   }
 
   public String getName(){
