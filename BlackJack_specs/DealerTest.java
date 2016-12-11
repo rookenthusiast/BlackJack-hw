@@ -16,13 +16,12 @@ public class DealerTest{
   player = new Player("Cameron", hand);
   }
 
-  @Test
-  public void canGetHand(){
-    Card card = new Card(SuitType.HEART, ValueType.FIVE);
-    dealer.dealCard(player, dealer);
-    dealer.takeCardFromDealer(card);
-    dealer.takeCardFromDealer(card);
-    assertEquals(2, hand.handCount());
-  }
+@Test
+public void canDealCard(){
+  Card card = new Card(SuitType.HEART, ValueType.FIVE);
+  dealer.dealCard(player);
+  dealer.dealCard(player);
+  assertEquals(2, player.hand.handCount());
+}
 
 }

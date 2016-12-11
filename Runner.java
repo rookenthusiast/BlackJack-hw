@@ -7,7 +7,7 @@ public class Runner{
 
     Deck deck = new Deck();
     Hand hand = new Hand();
-    Dealer dealer = new Dealer("Sticky_Fingers", deck);
+    Dealer dealer = new Dealer("Sticky_Fingers", deck, hand);
     Player player = new Player("Cameron", hand);
     deck.addCards();   
     deck.shuffle();
